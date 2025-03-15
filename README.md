@@ -1,5 +1,8 @@
 # Nirvana
-A Repository created and maintained by Piyush Pandey
+A Repository created and maintained by Piyush Pandey for easy access to timetable.
+
+A final year MBBS Student and Class Representative from March 2023 to Current.
+
 college-helper/
 ├── .github/
 │   └── workflows/
