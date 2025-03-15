@@ -1,83 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Helper</title>
-    <link rel="stylesheet" href="../src/css/styles.css">
+  <meta charset="UTF-8" />
+  <title>Master Time Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      margin: 5px 0;
+    }
+    .info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border: 1px solid #333;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    /* Smaller text for faculty/topic details */
+    .details {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 5px;
+      text-align: left;
+    }
+    /* Optional styling for multi-week items (Friday 2 PM - 4 PM) */
+    .week-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .week-list li {
+      margin: 3px 0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to College Helper</h1>
-    </header>
-    <main>
-        <section id="timetable">
-            <h2>Timetable</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Day</th>
-                        <th>9 AM - 12 Noon</th>
-                        <th>12 Noon - 1 PM</th>
-                        <th>2 PM - 3 PM</th>
-                        <th>3 PM - 4 PM</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Monday</td>
-                        <td id="mon-1"></td>
-                        <td id="mon-2"></td>
-                        <td id="mon-3"></td>
-                        <td id="mon-4"></td>
-                    </tr>
-                    <tr>
-                        <td>Tuesday</td>
-                        <td id="tue-1"></td>
-                        <td id="tue-2"></td>
-                        <td id="tue-3"></td>
-                        <td id="tue-4"></td>
-                    </tr>
-                    <tr>
-                        <td>Wednesday</td>
-                        <td id="wed-1"></td>
-                        <td id="wed-2"></td>
-                        <td id="wed-3"></td>
-                        <td id="wed-4"></td>
-                    </tr>
-                    <tr>
-                        <td>Thursday</td>
-                        <td id="thu-1"></td>
-                        <td id="thu-2"></td>
-                        <td id="thu-3"></td>
-                        <td id="thu-4"></td>
-                    </tr>
-                    <tr>
-                        <td>Friday</td>
-                        <td id="fri-1"></td>
-                        <td id="fri-2"></td>
-                        <td id="fri-3"></td>
-                        <td id="fri-4"></td>
-                    </tr>
-                    <tr>
-                        <td>Saturday</td>
-                        <td id="sat-1"></td>
-                        <td id="sat-2"></td>
-                        <td id="sat-3"></td>
-                        <td id="sat-4"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section id="resources">
-            <h2>Resources</h2>
-            <!-- Resources content goes here -->
-        </section>
-        <section id="announcements">
-            <h2>Announcements</h2>
-            <!-- Announcements content goes here -->
-        </section>
-    </main>
-    <script src="../src/js/scripts.js"></script>
+
+  <h1>MASTER TIME TABLE</h1>
+  <h3>2021-22 Batch STARTING DATE: 17-03-2025</h3>
+  <div class="info">
+    BLOCK -1: FROM <strong>17-03-2025</strong> TO <strong>09-08-2025</strong>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>DAY</th>
+        <th>9 AM - 12 PM</th>
+        <th>12 PM - 1 PM LGT/LECTURE</th>
+        <th>2 PM - 4 PM SGD/TUTORIAL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- MONDAY -->
+      <tr>
+        <td><strong>MONDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+            Faculty: Dr. Example A<br/>
+            Topic: Introduction to Ward Rounds
+          </div>
+        </td>
+        <td>
+          <strong>LGT / Lecture</strong>
+          <div class="details">
+            Faculty: Dr. Example B<br/>
+            Topic: Basic Case Discussions
+          </div>
+        </td>
+        <td>
+          <strong>SGD / Tutorial</strong>
+          <div class="details">
+            Faculty: Dr. Example C<br/>
+            Topic: Group Discussion on X-Ray Analysis
+          </div>
+        </td>
+      </tr>
+
+      <!-- TUESDAY -->
+      <tr>
+        <td><strong>TUESDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+            Faculty: Dr. Example D<br/>
+            Topic: Surgical Ward Observations
+          </div>
+        </td>
+        <td>
+          <strong>OBG</strong>
+          <div class="details">
+            Faculty: Dr. Example E<br/>
+            Topic: Antenatal Care Basics
+          </div>
+        </td>
+        <td>
+          <strong>???</strong>
+          <div class="details">
+            (Add your session or subject here)<br/>
+            Faculty: Dr. ???<br/>
+            Topic: ???
+          </div>
+        </td>
+      </tr>
+
+      <!-- WEDNESDAY -->
+      <tr>
+        <td><strong>WEDNESDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+            Faculty: Dr. Example F<br/>
+            Topic: Ward Procedures
+          </div>
+        </td>
+        <td>
+          <strong>Paediatrics</strong>
+          <div class="details">
+            Faculty: Dr. Example G<br/>
+            Topic: Neonatal Examination
+          </div>
+        </td>
+        <td>
+          <strong>???</strong>
+          <div class="details">
+            (Add your session or subject here)<br/>
+            Faculty: Dr. ???<br/>
+            Topic: ???
+          </div>
+        </td>
+      </tr>
+
+      <!-- THURSDAY -->
+      <tr>
+        <td><strong>THURSDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+            Faculty: Dr. Example H<br/>
+            Topic: Surgical Ward Round
+          </div>
+        </td>
+        <td>
+          <strong>General Surgery</strong>
+          <div class="details">
+            Faculty: Dr. Example I<br/>
+            Topic: Pre-Operative Procedures
+          </div>
+        </td>
+        <td>
+          <strong>OBG</strong>
+          <div class="details">
+            Faculty: Dr. Example J<br/>
+            Topic: Postnatal Care
+          </div>
+        </td>
+      </tr>
+
+      <!-- FRIDAY -->
+      <tr>
+        <td><strong>FRIDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+            Faculty: Dr. Example K<br/>
+            Topic: Emergency Department Rotation
+          </div>
+        </td>
+        <td>
+          <strong>General Surgery</strong>
+          <div class="details">
+            Faculty: Dr. Example L<br/>
+            Topic: Advanced Surgical Techniques
+          </div>
+        </td>
+        <td>
+          <strong>Medicine - 1st Week<br/>
+          Surgery - 2nd Week<br/>
+          ENT - 3rd Week<br/>
+          OBG - 4th Week</strong>
+          <div class="details">
+            <ul class="week-list">
+              <li><strong>Medicine (1st)</strong>: Faculty: Dr. M1 / Topic: ???</li>
+              <li><strong>Surgery (2nd)</strong>: Faculty: Dr. M2 / Topic: ???</li>
+              <li><strong>ENT (3rd)</strong>: Faculty: Dr. M3 / Topic: ???</li>
+              <li><strong>OBG (4th)</strong>: Faculty: Dr. M4 / Topic: ???</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <!-- SATURDAY -->
+      <tr>
+        <td><strong>SATURDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+            Faculty: Dr. Example N<br/>
+            Topic: Clinical Rounds
+          </div>
+        </td>
+        <td>
+          <strong>General Medicine</strong>
+          <div class="details">
+            Faculty: Dr. Example O<br/>
+            Topic: Cardiovascular System
+          </div>
+        </td>
+        <td>
+          <strong>???</strong>
+          <div class="details">
+            (Add your session or subject here)<br/>
+            Faculty: Dr. ???<br/>
+            Topic: ???
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </body>
 </html>
+
