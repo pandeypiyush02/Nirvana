@@ -4,227 +4,353 @@
   <meta charset="UTF-8" />
   <title>Master Time Table</title>
   <style>
+    /* ====== Basic Reset & Body Style ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
+      background-color: #f0f8ff; /* Light background */
+      color: #333;
+      padding: 20px;
     }
+
+    /* ====== Heading Styles ====== */
     h1, h2, h3 {
       text-align: center;
-      margin: 5px 0;
+      margin-bottom: 10px;
     }
-    .info {
-      text-align: center;
+
+    /* ====== Notification Box ====== */
+    .notification-box {
+      background-color: #ffe5b4; /* Light orange background */
+      border: 1px solid #ffb347; /* Slightly darker border */
+      padding: 10px 20px;
       margin-bottom: 20px;
+      border-radius: 4px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-weight: bold;
     }
+
+    /* ====== Timetable Table ====== */
+    .timetable-container {
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+    }
+
     table {
       width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
       border-collapse: collapse;
-      border: 1px solid #333;
+      margin-bottom: 20px;
+      background-color: #fff;
     }
     th, td {
-      border: 1px solid #333;
-      padding: 10px;
+      border: 1px solid #ccc;
       text-align: center;
+      padding: 12px;
       vertical-align: top;
     }
     th {
-      background-color: #f2f2f2;
+      background-color: #e6f2ff; /* Slightly tinted header background */
     }
-    /* Smaller text for faculty/topic details */
+    td strong {
+      display: block;
+      margin-bottom: 5px;
+    }
     .details {
       font-size: 0.9em;
       color: #555;
+      text-align: left;
       margin-top: 5px;
-      text-align: left;
     }
-    /* Optional styling for multi-week items (Friday 2 PM - 4 PM) */
-    .week-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
+
+    /* ====== Button Style ====== */
+    .toggle-button {
+      display: inline-block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50; /* Green button */
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
     }
-    .week-list li {
-      margin: 3px 0;
+    .toggle-button:hover {
+      background-color: #45a049;
     }
+
+    /* ====== Past Timetable (Hidden by default) ====== */
+    #past-timetable {
+      display: none;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ====== Repository Link ====== */
+    .repo-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .repo-link a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .repo-link a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
 
-  <h1>MASTER TIME TABLE</h1>
-  <h3>2021-22 Batch STARTING DATE: 17-03-2025</h3>
-  <div class="info">
-    BLOCK -1: FROM <strong>17-03-2025</strong> TO <strong>22-03-2025</strong>
+  <!-- ====== Important Notification Box ====== -->
+  <div class="notification-box">
+    <strong>Important Notification:</strong><br/>
+    This schedule is subject to change every week. Please check back regularly for updates!
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>DAY</th>
-        <th>9 AM - 12 PM</th>
-        <th>12 PM - 1 PM LGT/LECTURE</th>
-        <th>2 PM - 4 PM SGD/TUTORIAL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- MONDAY -->
-      <tr>
-        <td><strong>MONDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>OPHTHAL</strong>
-          <div class="details">
-            Faculty: Dr. Sowbhagya ma'am  B<br/>
-            Topic: Refractory errors
-          </div>
-        </td>
-        <td>
-          <strong>AETCOM</strong>
-          <div class="details">
-            Faculty: Class Cancelled<br/>
-            Topic: Only attendance
-          </div>
-        </td>
-      </tr>
+  <!-- ====== Current Week Timetable ====== -->
+  <h1>MASTER TIME TABLE</h1>
+  <h3>Academic Year 2025</h3>
+  <div class="timetable-container" id="current-week-timetable">
+    <table>
+      <thead>
+        <tr>
+          <th>DAY</th>
+          <th>9 AM - 12 PM</th>
+          <th>12 PM - 1 PM LGT/LECTURE</th>
+          <th>2 PM - 4 PM SGD/TUTORIAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- MONDAY -->
+        <tr>
+          <td><strong>MONDAY</strong></td>
+          <td>
+            <strong>Postings</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>Ophthalmology</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>AETCOM</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+        </tr>
 
-      <!-- TUESDAY -->
-      <tr>
-        <td><strong>TUESDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>OBG</strong>
-          <div class="details">
-            Faculty: Only attendance<br/>
-            Topic: Class Cancelled
-          </div>
-        </td>
-        <td>
-          <strong>General Medicine</strong>
-          <div class="details">
-            Faculty: Dr. Harshith (Intern)<br/>
-            Topic: Unknown
-          </div>
-        </td>
-      </tr>
+        <!-- TUESDAY -->
+        <tr>
+          <td><strong>TUESDAY</strong></td>
+          <td>
+            <strong>Postings</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>OBG</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>General Medicine</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+        </tr>
 
-      <!-- WEDNESDAY -->
-      <tr>
-        <td><strong>WEDNESDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>Paediatrics</strong>
-          <div class="details">
-            Faculty: Dr. Shashi Kiran<br/>
-            Topic: Etiopathogenesis of Respiratory Distress in Children
-          </div>
-        </td>
-        <td>
-          <strong>General Surgery</strong>
-          <div class="details">
-            <br/>
-            Faculty: Class Cancelled<br/>
-            Topic: Only Attendance
-          </div>
-        </td>
-      </tr>
+        <!-- WEDNESDAY -->
+        <tr>
+          <td><strong>WEDNESDAY</strong></td>
+          <td>
+            <strong>Postings</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>Paediatrics</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>OBG</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+        </tr>
 
-      <!-- THURSDAY -->
-      <tr>
-        <td><strong>THURSDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>General Surgery</strong>
-          <div class="details">
-            Faculty: Only Attendance<br/>
-            Topic: Class Cancelled
-          </div>
-        </td>
-        <td>
-          <strong>OBG</strong>
-          <div class="details">
-            Faculty: Only Attendance<br/>
-            Topic: Case Sheet Writing
-          </div>
-        </td>
-      </tr>
+        <!-- THURSDAY -->
+        <tr>
+          <td><strong>THURSDAY</strong></td>
+          <td>
+            <strong>Postings</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>General Surgery</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>(Placeholder)</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+        </tr>
 
-      <!-- FRIDAY -->
-      <tr>
-        <td><strong>FRIDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>General Surgery</strong>
-          <div class="details">
-            Faculty: Class Cancelled<br/>
-            Topic: Only Attendance
-          </div>
-        </td>
-        <td>
-          <strong>
-          OBG </strong>
-          <div class="details">
-            <ul class="week-list">
-              <li><strong>OBG (3rd)</strong>: Faculty: No class / Topic: Surgery Attendance considered for this class as well</li>
-            </ul>
-          </div>
-        </td>
-      </tr>
+        <!-- FRIDAY -->
+        <tr>
+          <td><strong>FRIDAY</strong></td>
+          <td>
+            <strong>Postings</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>General Surgery</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>Rotational Subject</strong>
+            <div class="details">
+              <!-- Example: Medicine 1st week, Surgery 2nd, OBG 3rd, ENT 4th -->
+              <ul style="list-style-type: disc; margin-left: 20px; text-align: left;">
+                <li>Week 1: Medicine<br/>Faculty: [Name]<br/>Topic: [Topic]</li>
+                <li>Week 2: Surgery<br/>Faculty: [Name]<br/>Topic: [Topic]</li>
+                <li>Week 3: OBG<br/>Faculty: [Name]<br/>Topic: [Topic]</li>
+                <li>Week 4: ENT<br/>Faculty: [Name]<br/>Topic: [Topic]</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
 
-      <!-- SATURDAY -->
-      <tr>
-        <td><strong>Saturday</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>General Medicine</strong>
-          <div class="details">
-            Faculty: Unknown<br/>
-            Topic: Unknowm
-          </div>
-        </td>
-        <td>
-          <strong>
-          OBG </strong>
-          <div class="details">
-            <ul class="week-list">
-              <li><strong></strong>: Faculty: Dr. Maheshwari ma'am / Topic: Weekly extra OBG lecture class starting from 29th </li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-!-- Notification Box -->
-<div class="notification-box">
-  <strong>Important Notification for This Week</strong><br/>
-  Dr. Maheshwari ma'am will take classes every Saturday between 2 to 4 PM starting from 29th March.
-  <a href="https://bit.ly/41nZKj6" target="_blank">Google Drive Repository for final year</a>.
-</div>
+        <!-- SATURDAY -->
+        <tr>
+          <td><strong>SATURDAY</strong></td>
+          <td>
+            <strong>Postings</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>General Medicine</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+          <td>
+            <strong>OBG</strong>
+            <div class="details">
+              Faculty: [Name]<br/>
+              Topic: [Topic]
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ====== Toggle Button for Past Timetable ====== -->
+  <div style="text-align: center;">
+    <button class="toggle-button" onclick="togglePastTimetable()">Show/Hide Past Week’s Timetable</button>
+  </div>
+
+  <!-- ====== Past Week Timetable (Archived) ====== -->
+  <div id="past-timetable">
+    <h2 style="text-align:center;">PAST WEEK’S TIMETABLE</h2>
+    <!-- You can keep your old timetable code here -->
+    <table>
+      <thead>
+        <tr>
+          <th>DAY</th>
+          <th>9 AM - 12 PM</th>
+          <th>12 PM - 1 PM LGT/LECTURE</th>
+          <th>2 PM - 4 PM SGD/TUTORIAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example old data from your original code -->
+        <tr>
+          <td><strong>MONDAY</strong></td>
+          <td>
+            <strong>Postings</strong>
+          </td>
+          <td>
+            <strong>OPHTHAL</strong><br/>
+            <div class="details">Faculty: [Name]<br/>Topic: [Topic]</div>
+          </td>
+          <td>
+            <strong>AETCOM</strong><br/>
+            <div class="details">Faculty: [Name]<br/>Topic: [Topic]</div>
+          </td>
+        </tr>
+        <!-- ... Continue with the rest of the past schedule rows ... -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ====== Link to Your Repository ====== -->
+  <div class="repo-link">
+    <a href="https://bit.ly/41nZKj6" target="_blank">Visit My Repository</a>
+  </div>
+
+  <script>
+    /* ====== JavaScript to Toggle Past Timetable ====== */
+    function togglePastTimetable() {
+      const pastTable = document.getElementById("past-timetable");
+      if (pastTable.style.display === "none" || pastTable.style.display === "") {
+        pastTable.style.display = "block";
+      } else {
+        pastTable.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
-
