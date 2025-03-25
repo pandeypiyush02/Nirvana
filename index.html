@@ -305,34 +305,209 @@
   <div id="past-timetable">
     <h2 style="text-align:center;">PAST WEEK’S TIMETABLE</h2>
     <!-- You can keep your old timetable code here -->
-    <table>
-      <thead>
-        <tr>
-          <th>DAY</th>
-          <th>9 AM - 12 PM</th>
-          <th>12 PM - 1 PM LGT/LECTURE</th>
-          <th>2 PM - 4 PM SGD/TUTORIAL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Example old data from your original code -->
-        <tr>
-          <td><strong>MONDAY</strong></td>
-          <td>
-            <strong>Postings</strong>
-          </td>
-          <td>
-            <strong>OPHTHAL</strong><br/>
-            <div class="details">Faculty: [Name]<br/>Topic: [Topic]</div>
-          </td>
-          <td>
-            <strong>AETCOM</strong><br/>
-            <div class="details">Faculty: [Name]<br/>Topic: [Topic]</div>
-          </td>
-        </tr>
-        <!-- ... Continue with the rest of the past schedule rows ... -->
-      </tbody>
-    </table>
+     table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border: 1px solid #333;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    /* Smaller text for faculty/topic details */
+    .details {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 5px;
+      text-align: left;
+    }
+    /* Optional styling for multi-week items (Friday 2 PM - 4 PM) */
+    .week-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .week-list li {
+      margin: 3px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MASTER TIME TABLE</h1>
+  <h3>2021-22 Batch STARTING DATE: 17-03-2025</h3>
+  <div class="info">
+    BLOCK -1: FROM <strong>17-03-2025</strong> TO <strong>22-03-2025</strong>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>DAY</th>
+        <th>9 AM - 12 PM</th>
+        <th>12 PM - 1 PM LGT/LECTURE</th>
+        <th>2 PM - 4 PM SGD/TUTORIAL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- MONDAY -->
+      <tr>
+        <td><strong>MONDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+          </div>
+        </td>
+        <td>
+          <strong>OPHTHAL</strong>
+          <div class="details">
+            Faculty: Dr. Sowbhagya ma'am  B<br/>
+            Topic: Refractory errors
+          </div>
+        </td>
+        <td>
+          <strong>AETCOM</strong>
+          <div class="details">
+            Faculty: Class Cancelled<br/>
+            Topic: Only attendance
+          </div>
+        </td>
+      </tr>
+
+      <!-- TUESDAY -->
+      <tr>
+        <td><strong>TUESDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+          </div>
+        </td>
+        <td>
+          <strong>OBG</strong>
+          <div class="details">
+            Faculty: Only attendance<br/>
+            Topic: Class Cancelled
+          </div>
+        </td>
+        <td>
+          <strong>General Medicine</strong>
+          <div class="details">
+            Faculty: Dr. Harshith (Intern)<br/>
+            Topic: Unknown
+          </div>
+        </td>
+      </tr>
+
+      <!-- WEDNESDAY -->
+      <tr>
+        <td><strong>WEDNESDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+          </div>
+        </td>
+        <td>
+          <strong>Paediatrics</strong>
+          <div class="details">
+            Faculty: Dr. Shashi Kiran<br/>
+            Topic: Etiopathogenesis of Respiratory Distress in Children
+          </div>
+        </td>
+        <td>
+          <strong>General Surgery</strong>
+          <div class="details">
+            <br/>
+            Faculty: Class Cancelled<br/>
+            Topic: Only Attendance
+          </div>
+        </td>
+      </tr>
+
+      <!-- THURSDAY -->
+      <tr>
+        <td><strong>THURSDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+          </div>
+        </td>
+        <td>
+          <strong>General Surgery</strong>
+          <div class="details">
+            Faculty: Only Attendance<br/>
+            Topic: Class Cancelled
+          </div>
+        </td>
+        <td>
+          <strong>OBG</strong>
+          <div class="details">
+            Faculty: Only Attendance<br/>
+            Topic: Case Sheet Writing
+          </div>
+        </td>
+      </tr>
+
+      <!-- FRIDAY -->
+      <tr>
+        <td><strong>FRIDAY</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+          </div>
+        </td>
+        <td>
+          <strong>General Surgery</strong>
+          <div class="details">
+            Faculty: Class Cancelled<br/>
+            Topic: Only Attendance
+          </div>
+        </td>
+        <td>
+          <strong>
+          OBG </strong>
+          <div class="details">
+            <ul class="week-list">
+              <li><strong>OBG (3rd)</strong>: Faculty: No class / Topic: Surgery Attendance considered for this class as well</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <!-- SATURDAY -->
+      <tr>
+        <td><strong>Saturday</strong></td>
+        <td>
+          <strong>Postings</strong>
+          <div class="details">
+          </div>
+        </td>
+        <td>
+          <strong>General Medicine</strong>
+          <div class="details">
+            Faculty: Only Attendance<br/>
+            Topic: Class Cancelled
+          </div>
+        </td>
+        <td>
+          <strong>
+          OBG </strong>
+          <div class="details">
+            <ul class="week-list">
+              <li><strong></strong>: Faculty: Dr. Maheshwari ma'am / Topic: Weekly extra OBG lecture class starting from 29th </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 
   <!-- ====== Link to Your Repository ====== -->
