@@ -537,19 +537,6 @@
   Views: <span id="counter">0</span>
 </div>
 
-<div id="view-counter" style="text-align: center; margin-top: 20px;">
-  Views: <span id="counter">0</span>
-</div>
-
-<script>
-  // This will increment the counter each time the page is loaded
-  fetch('https://api.countapi.xyz/hit/pandeypiyush02.github.io/Nirvana/visits')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('counter').innerText = data.value;
-    })
-    .catch(error => console.error('Error:', error));
-</script>
   
   <!-- Repository Link -->
   <div class="repo-link">
