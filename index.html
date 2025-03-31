@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Master Time Table</title>
   <style>
-    /* ====== Basic Reset & Body Style ====== */
+    /* Basic Reset & Body Style */
     * {
       margin: 0;
       padding: 0;
@@ -12,51 +12,80 @@
     }
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f8ff; /* Light background */
+      background-color: #f0f8ff;
       color: #333;
       padding: 20px;
     }
-
-    /* ====== Heading Styles ====== */
     h1, h2, h3 {
       text-align: center;
       margin-bottom: 10px;
     }
-
-    /* ====== Notification Box ====== */
+    /* Notification Box */
     .notification-box {
-      background-color: #ffe5b4; /* Light orange background */
-      border: 1px solid #ffb347; /* Slightly darker border */
+      background-color: #ffe5b4;
+      border: 1px solid #ffb347;
       padding: 10px 20px;
       margin-bottom: 20px;
       border-radius: 4px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 20px auto;
       text-align: center;
       font-weight: bold;
     }
-
-    /* ====== Timetable Table ====== */
-    .timetable-container {
-      max-width: 900px;
-      margin: 0 auto 30px auto;
+    /* Toggle Button */
+    .toggle-button {
+      display: block;
+      margin: 10px auto 20px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
     }
-
+    .toggle-button:hover {
+      background-color: #45a049;
+    }
+    /* Timetable Container */
+    #timetable-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: none; /* Hidden by default */
+    }
+    /* Tabs */
+    .tabs {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tab-button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .tab-button.active {
+      background-color: #45a049;
+    }
+    /* Table Styles */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 20px;
       background-color: #fff;
+      margin-bottom: 20px;
     }
     th, td {
       border: 1px solid #ccc;
-      text-align: center;
       padding: 12px;
+      text-align: center;
       vertical-align: top;
     }
     th {
-      background-color: #e6f2ff; /* Slightly tinted header background */
+      background-color: #e6f2ff;
     }
     td strong {
       display: block;
@@ -68,34 +97,8 @@
       text-align: left;
       margin-top: 5px;
     }
-
-    /* ====== Button Style ====== */
-    .toggle-button {
-      display: inline-block;
-      margin: 10px auto;
-      padding: 10px 20px;
-      background-color: #4CAF50; /* Green button */
-      color: #fff;
-      text-decoration: none;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-    .toggle-button:hover {
-      background-color: #45a049;
-    }
-
-    /* ====== Past Timetable (Hidden by default) ====== */
-    #past-timetable {
-      display: none;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    /* ====== Repository Link ====== */
+    /* Repository Link */
     .repo-link {
-      display: block;
       text-align: center;
       margin-top: 20px;
     }
@@ -107,392 +110,345 @@
     .repo-link a:hover {
       text-decoration: underline;
     }
-
   </style>
 </head>
 <body>
-
-  <!-- ====== Important Notification Box ====== -->
+  <!-- Important Notification Box -->
   <div class="notification-box">
     <strong>Important Notifications:</strong><br/>
     This schedule is subject to change every week. Please check back regularly for updates!<br/>
-    <br/>
     READ Anatomy of female reproductive system FOR 26th March Lecture by Dr. Soujanya ma'am
   </div>
-
-  <!-- ====== Current Week Timetable ====== -->
-  <h1>CURRENT WEEK TIME TABLE</h1>
-  <h3>24th to 29th March: Week 2 of Academic Year 2025</h3>
-  <div class="timetable-container" id="current-week-timetable">
-    <table>
-      <thead>
-        <tr>
-          <th>DAY</th>
-          <th>9 AM - 12 PM</th>
-          <th>12 PM - 1 PM LGT/LECTURE</th>
-          <th>2 PM - 4 PM SGD/TUTORIAL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- MONDAY -->
-        <tr>
-          <td><strong>MONDAY<br/>
-            <br/>
-          24th March</strong></td>
-          <td>
-            <strong>Postings</strong>
-            <div class="details">
-            </div>
-          </td>
-          <td>
-            <strong>Ophthalmology</strong>
-            <div class="details">
-              Faculty: Dr. Sowbhagya ma'am<br/>
-              Topic: Corneal Ulcers
-            </div>
-          </td>
-          <td>
-            <strong>AETCOM</strong>
-            <div class="details">
-              Faculty: Dr. Ishwarya ma'am<br/>
-              Topic: medicolegal, socio cultural and ethical issue pertaining to health care in children
-            </div>
-          </td>
-        </tr>
-
-        <!-- TUESDAY -->
-        <tr>
-          <td><strong>TUESDAY<br/>
-            <br/>
-          25th March</strong></td>
-          <td>
-            <strong>Postings</strong>
-            <div class="details">
-            </div>
-          </td>
-          <td>
-            <strong>OBG</strong>
-            <div class="details">
-              Faculty: Dr. Soumya ma'am<br/>
-              Topic: UTI in Gynaecology
-            </div>
-          </td>
-          <td>
-            <strong>General Medicine</strong>
-            <div class="details">
-              Faculty: Dr. Uday sir<br/>
-              Topic: 2 student seminars on Neuron synapse, neurotranmitters 
-            </div>
-          </td>
-        </tr>
-
-        <!-- WEDNESDAY -->
-        <tr>
-          <td><strong>WEDNESDAY<br/>
-            <br/>
-          26th March</strong></td>
-          <td>
-            <strong>Postings</strong>
-            <div class="details">
-            </div>
-          </td>
-          <td>
-            <strong>Paediatrics</strong>
-            <div class="details">
-              Faculty: Dr. Spurti<br/>
-              Topic: Cardiorespiratory arrest in children
-            </div>
-          </td>
-          <td>
-            <strong>OBG</strong>
-            <div class="details">
-              Faculty: Dr. Soujanya ma'am<br/>
-              Topic: Anatomy of female reproductive system
-            </div>
-          </td>
-        </tr>
-
-        <!-- THURSDAY -->
-        <tr>
-          <td><strong>THURSDAY<br/>
-            <br/>
-          27th March</strong></td>
-          <td>
-            <strong>Postings</strong>
-            <div class="details">
-            </div>
-          </td>
-          <td>
-            <strong>General Surgery</strong>
-            <div class="details">
-              Faculty: Dr. Nitu ma'am<br/>
-              Topic: 3 Student seminar on burns
-            </div>
-          </td>
-          <td>
-            <strong>OBG</strong>
-            <div class="details">
-              Faculty: Dr. Susheela<br/>
-              Topic: Antepartum Hemorrhage
-            </div>
-          </td>
-        </tr>
-
-        <!-- FRIDAY -->
-        <tr>
-          <td><strong>FRIDAY<br/>
-            <br/>
-          28th March</strong></td>
-          <td>
-            <strong>Postings</strong>
-            <div class="details">
-            </div>
-          </td>
-          <td>
-            <strong>General Surgery</strong>
-            <div class="details">
-              Faculty: Dr. Nitu ma'am<br/>
-              Topic: Cleft lip and palate
-            </div>
-          </td>
-          <td>
-            <strong>Rotational Subject</strong>
-            <div class="details">
-              <!-- Example: Medicine 1st week, Surgery 2nd, OBG 3rd, ENT 4th -->
-              <ul style="list-style-type: disc; margin-left: 20px; text-align: left;">
-                <li>Week 4: ENT<br/>Faculty: Dr. Shruthi ma'am<br/>Topic: Tumors of Oropharynx, Hypopharynx, Pharyngeal pouches</li>
-              </ul>
-            </div>
-          </td>
-        </tr>
-
-        <!-- SATURDAY -->
-        <tr>
-          <td><strong>SATURDAY<br/>
-            <br/>
-          29th March</strong></td>
-          <td>
-            <strong>Postings</strong>
-            <div class="details">
-            </div>
-          </td>
-          <td>
-            <strong>General Medicine</strong>
-            <div class="details">
-              Faculty: Dr. Uday sir<br/>
-              Topic: Continuation of student seminar
-            </div>
-          </td>
-          <td>
-            <strong>OBG</strong>
-            <div class="details">
-              Faculty: Dr. Maheshwari ma'am<br/>
-              Topic: OBG Extra classes every saturday
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  
+  <!-- Toggle Button to Show/Hide the Timetable Section -->
+  <button class="toggle-button" onclick="toggleTimetable()">Show/Hide Timetables</button>
+  
+  <!-- Timetable Container with Tabs -->
+  <div id="timetable-container">
+    <!-- Tab Buttons -->
+    <div class="tabs">
+      <button class="tab-button active" id="tab-week1" onclick="showWeek('week1')">Week 1</button>
+      <button class="tab-button" id="tab-week2" onclick="showWeek('week2')">Week 2</button>
+    </div>
+    
+    <!-- Week 1 Timetable (Old Schedule with Original Details) -->
+    <div id="week1" class="week-content">
+      <h1>OLD TIME TABLE</h1>
+      <h3>2021-22 Batch STARTING DATE: 17-03-2025</h3>
+      <div class="info" style="text-align:center; margin-bottom:20px;">
+        FROM <strong>17-03-2025</strong> TO <strong>22-03-2025</strong>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>DAY</th>
+            <th>9 AM - 12 PM</th>
+            <th>12 PM - 1 PM LGT/LECTURE</th>
+            <th>2 PM - 4 PM SGD/TUTORIAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- MONDAY -->
+          <tr>
+            <td><strong>MONDAY</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details"></div>
+            </td>
+            <td>
+              <strong>OPHTHAL</strong>
+              <div class="details">
+                Faculty: Dr. Sowbhagya ma'am  B<br/>
+                Topic: Refractory errors
+              </div>
+            </td>
+            <td>
+              <strong>AETCOM</strong>
+              <div class="details">
+                Faculty: Class Cancelled<br/>
+                Topic: Only attendance
+              </div>
+            </td>
+          </tr>
+          <!-- TUESDAY -->
+          <tr>
+            <td><strong>TUESDAY</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details"></div>
+            </td>
+            <td>
+              <strong>OBG</strong>
+              <div class="details">
+                Faculty: Only attendance<br/>
+                Topic: Class Cancelled
+              </div>
+            </td>
+            <td>
+              <strong>General Medicine</strong>
+              <div class="details">
+                Faculty: Dr. Harshith (Intern)<br/>
+                Topic: Unknown
+              </div>
+            </td>
+          </tr>
+          <!-- WEDNESDAY -->
+          <tr>
+            <td><strong>WEDNESDAY</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details"></div>
+            </td>
+            <td>
+              <strong>Paediatrics</strong>
+              <div class="details">
+                Faculty: Dr. Shashi Kiran<br/>
+                Topic: Etiopathogenesis of Respiratory Distress in Children
+              </div>
+            </td>
+            <td>
+              <strong>General Surgery</strong>
+              <div class="details">
+                <br/>
+                Faculty: Class Cancelled<br/>
+                Topic: Only Attendance
+              </div>
+            </td>
+          </tr>
+          <!-- THURSDAY -->
+          <tr>
+            <td><strong>THURSDAY</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details"></div>
+            </td>
+            <td>
+              <strong>General Surgery</strong>
+              <div class="details">
+                Faculty: Only Attendance<br/>
+                Topic: Class Cancelled
+              </div>
+            </td>
+            <td>
+              <strong>OBG</strong>
+              <div class="details">
+                Faculty: Only Attendance<br/>
+                Topic: Case Sheet Writing
+              </div>
+            </td>
+          </tr>
+          <!-- FRIDAY -->
+          <tr>
+            <td><strong>FRIDAY</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details"></div>
+            </td>
+            <td>
+              <strong>General Surgery</strong>
+              <div class="details">
+                Faculty: Class Cancelled<br/>
+                Topic: Only Attendance
+              </div>
+            </td>
+            <td>
+              <strong>OBG</strong>
+              <div class="details">
+                <ul style="list-style-type: disc; margin-left: 20px; text-align: left;">
+                  <li><strong>OBG (3rd)</strong>: Faculty: No class / Topic: Surgery Attendance considered for this class as well</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <!-- SATURDAY -->
+          <tr>
+            <td><strong>Saturday</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details"></div>
+            </td>
+            <td>
+              <strong>General Medicine</strong>
+              <div class="details">
+                Faculty: Only Attendance<br/>
+                Topic: Class Cancelled
+              </div>
+            </td>
+            <td>
+              <strong>OBG</strong>
+              <div class="details">
+                <ul style="list-style-type: disc; margin-left: 20px; text-align: left;">
+                  <li><strong></strong>: Faculty: Dr. Maheshwari ma'am / Topic: Weekly extra OBG lecture class starting from 29th </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Week 2 Timetable (Current Week with Placeholders) -->
+    <div id="week2" class="week-content" style="display: none;">
+      <h1>CURRENT WEEK TIME TABLE</h1>
+      <h3>31st March to 5th April 2025</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>DAY</th>
+            <th>9 AM - 12 PM</th>
+            <th>12 PM - 1 PM LGT/LECTURE</th>
+            <th>2 PM - 4 PM SGD/TUTORIAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- MONDAY: Holiday -->
+          <tr>
+            <td colspan="4">
+              <strong>MONDAY - 31/03/2025: Holiday – Eid Mubarak</strong>
+            </td>
+          </tr>
+          <!-- TUESDAY -->
+          <tr>
+            <td><strong>TUESDAY<br/>1st April</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>Ophthalmology</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>AETCOM</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+          </tr>
+          <!-- WEDNESDAY -->
+          <tr>
+            <td><strong>WEDNESDAY<br/>2nd April</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>OBG</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>General Medicine</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+          </tr>
+          <!-- THURSDAY -->
+          <tr>
+            <td><strong>THURSDAY<br/>3rd April</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>General Surgery</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>OBG</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+          </tr>
+          <!-- FRIDAY -->
+          <tr>
+            <td><strong>FRIDAY<br/>4th April</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>General Surgery</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>Rotational Subject</strong>
+              <div class="details">
+                <ul style="list-style-type: disc; margin-left: 20px; text-align: left;">
+                  <li>Week 4: ENT<br/>Faculty: ??<br/>Topic: ??</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <!-- SATURDAY -->
+          <tr>
+            <td><strong>SATURDAY<br/>5th April</strong></td>
+            <td>
+              <strong>Postings</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>General Medicine</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+            <td>
+              <strong>OBG</strong>
+              <div class="details">
+                Faculty: ??<br/>Topic: ??
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <!-- ====== Toggle Button for Past Timetable ====== -->
-  <div style="text-align: center;">
-    <button class="toggle-button" onclick="togglePastTimetable()">Show/Hide Past Week’s Timetable</button>
-  </div>
-
-  <!-- ====== Past Week Timetable (Archived) ====== -->
-  <div id="past-timetable">
-    <h2 style="text-align:center;">PAST WEEK’S TIMETABLE</h2>
-    <!-- You can keep your old timetable code here -->
-   
-  </style>
-</head>
-<body>
-
-  <h1>OLD TIME TABLE</h1>
-  <h3>2021-22 Batch STARTING DATE: 17-03-2025</h3>
-  <div class="info">
-    FROM <strong>17-03-2025</strong> TO <strong>22-03-2025</strong>
-  </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>DAY</th>
-        <th>9 AM - 12 PM</th>
-        <th>12 PM - 1 PM LGT/LECTURE</th>
-        <th>2 PM - 4 PM SGD/TUTORIAL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- MONDAY -->
-      <tr>
-        <td><strong>MONDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>OPHTHAL</strong>
-          <div class="details">
-            Faculty: Dr. Sowbhagya ma'am  B<br/>
-            Topic: Refractory errors
-          </div>
-        </td>
-        <td>
-          <strong>AETCOM</strong>
-          <div class="details">
-            Faculty: Class Cancelled<br/>
-            Topic: Only attendance
-          </div>
-        </td>
-      </tr>
-
-      <!-- TUESDAY -->
-      <tr>
-        <td><strong>TUESDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>OBG</strong>
-          <div class="details">
-            Faculty: Only attendance<br/>
-            Topic: Class Cancelled
-          </div>
-        </td>
-        <td>
-          <strong>General Medicine</strong>
-          <div class="details">
-            Faculty: Dr. Harshith (Intern)<br/>
-            Topic: Unknown
-          </div>
-        </td>
-      </tr>
-
-      <!-- WEDNESDAY -->
-      <tr>
-        <td><strong>WEDNESDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>Paediatrics</strong>
-          <div class="details">
-            Faculty: Dr. Shashi Kiran<br/>
-            Topic: Etiopathogenesis of Respiratory Distress in Children
-          </div>
-        </td>
-        <td>
-          <strong>General Surgery</strong>
-          <div class="details">
-            <br/>
-            Faculty: Class Cancelled<br/>
-            Topic: Only Attendance
-          </div>
-        </td>
-      </tr>
-
-      <!-- THURSDAY -->
-      <tr>
-        <td><strong>THURSDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>General Surgery</strong>
-          <div class="details">
-            Faculty: Only Attendance<br/>
-            Topic: Class Cancelled
-          </div>
-        </td>
-        <td>
-          <strong>OBG</strong>
-          <div class="details">
-            Faculty: Only Attendance<br/>
-            Topic: Case Sheet Writing
-          </div>
-        </td>
-      </tr>
-
-      <!-- FRIDAY -->
-      <tr>
-        <td><strong>FRIDAY</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>General Surgery</strong>
-          <div class="details">
-            Faculty: Class Cancelled<br/>
-            Topic: Only Attendance
-          </div>
-        </td>
-        <td>
-          <strong>
-          OBG </strong>
-          <div class="details">
-            <ul class="week-list">
-              <li><strong>OBG (3rd)</strong>: Faculty: No class / Topic: Surgery Attendance considered for this class as well</li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-
-      <!-- SATURDAY -->
-      <tr>
-        <td><strong>Saturday</strong></td>
-        <td>
-          <strong>Postings</strong>
-          <div class="details">
-          </div>
-        </td>
-        <td>
-          <strong>General Medicine</strong>
-          <div class="details">
-            Faculty: Only Attendance<br/>
-            Topic: Class Cancelled
-          </div>
-        </td>
-        <td>
-          <strong>
-          OBG </strong>
-          <div class="details">
-            <ul class="week-list">
-              <li><strong></strong>: Faculty: Dr. Maheshwari ma'am / Topic: Weekly extra OBG lecture class starting from 29th </li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-
-  <!-- ====== Link to Your Repository ====== -->
+  
+  <!-- Repository Link -->
   <div class="repo-link">
     <a href="https://bit.ly/41nZKj6" target="_blank">Visit the Repository</a>
   </div>
-
+  
   <script>
-    /* ====== JavaScript to Toggle Past Timetable ====== */
-    function togglePastTimetable() {
-      const pastTable = document.getElementById("past-timetable");
-      if (pastTable.style.display === "none" || pastTable.style.display === "") {
-        pastTable.style.display = "block";
-      } else {
-        pastTable.style.display = "none";
+    // Toggle the display of the entire timetable container
+    function toggleTimetable() {
+      const container = document.getElementById("timetable-container");
+      container.style.display = (container.style.display === "none" || container.style.display === "") ? "block" : "none";
+    }
+    
+    // Show the specified week tab and update the active button
+    function showWeek(weekId) {
+      const weekContents = document.getElementsByClassName("week-content");
+      for (let i = 0; i < weekContents.length; i++) {
+        weekContents[i].style.display = "none";
       }
+      document.getElementById(weekId).style.display = "block";
+      
+      // Update active tab styling
+      document.getElementById("tab-week1").classList.remove("active");
+      document.getElementById("tab-week2").classList.remove("active");
+      document.getElementById("tab-" + weekId).classList.add("active");
     }
   </script>
-
 </body>
 </html>
