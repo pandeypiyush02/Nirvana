@@ -537,10 +537,13 @@
   Views: <span id="counter">0</span>
 </div>
 
+<div id="view-counter" style="text-align: center; margin-top: 20px;">
+  Views: <span id="counter">0</span>
+</div>
+
 <script>
-  // Replace 'your-namespace' and 'your-key' with unique identifiers.
-  // You can generate these freely; for example, use your domain name as the namespace.
-  fetch('https://api.countapi.xyz/hit/github.io/Nirvana)
+  // This will increment the counter each time the page is loaded
+  fetch('https://api.countapi.xyz/hit/pandeypiyush02.github.io/Nirvana/visits')
     .then(response => response.json())
     .then(data => {
       document.getElementById('counter').innerText = data.value;
